@@ -7,11 +7,7 @@ policy at the end of the fle.
 */
 #include "qvanish.hpp"
 
-int main() {
-  greet();
-
-  return 0;
-}
+int main(int argc, char *argv[]) { return 0; }
 /*You may not share, distribute, or reproduce in any way any copyrighted
  * material, trademarks, or other proprietary information belonging to others
  * without obtaining the prior written consent of the owner of such proprietary

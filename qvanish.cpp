@@ -1,3 +1,5 @@
 #include "qvanish.hpp"
 
-void greet() { std::cout << "hey\n"; }
+qvanish::Cleaner::Cleaner() {}
+qvanish::Cleaner::~Cleaner() {}
+bool qvanish::Cleaner::run_splash_screen(float t) { return true; }

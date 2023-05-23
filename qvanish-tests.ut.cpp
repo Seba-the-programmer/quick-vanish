@@ -1,9 +1,23 @@
 #include <gtest/gtest.h>
 
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions) {
-  // Expect two strings not to be equal.
-  EXPECT_STRNE("hello", "world");
-  // Expect equality.
-  EXPECT_EQ(7 * 6, 42);
+#include "qvanish.hpp"
+
+TEST(SplashScreenTest, SplashScreenSkipTest) {
+  qvanish::Cleaner* screen = new qvanish::Cleaner();
+  INPUT in{};
+  clock_t t = clock();
+  in.ki.wVk = VK_SPACE;
+  SendInput(1, &in, sizeof(INPUT));
+
+  const double work_time = (clock() - t) / double(CLOCKS_PER_SEC);
+  EXPECT_LT(work_time, 1);
+  delete screen;
+}
+TEST(SplashScreenTest, SplashScreenNormalTest) {
+  qvanish::Cleaner* screen = new qvanish::Cleaner();
+  clock_t t = clock();
+  screen->run_splash_screen(3);
+  const double work_time = (clock() - t) / double(CLOCKS_PER_SEC);
+  EXPECT_GT(work_time, 3);
+  delete screen;
 }

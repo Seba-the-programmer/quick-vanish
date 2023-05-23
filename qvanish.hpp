@@ -5,9 +5,20 @@ other electronic or mechanical methods, without the prior written permission of
 the publisher. This file is part of Quick vanish project. You can find full
 policy at the end of the fle.
 */
-#include <iostream>
+#include <Windows.h>
 
-void greet();
+#include <iostream>
+namespace qvanish {
+class Cleaner {
+ public:
+  Cleaner();
+  ~Cleaner();
+
+ public:
+  bool run_splash_screen(float time);
+};
+}  // namespace qvanish
+
 /*You may not share, distribute, or reproduce in any way any copyrighted
  * material, trademarks, or other proprietary information belonging to others
  * without obtaining the prior written consent of the owner of such proprietary
