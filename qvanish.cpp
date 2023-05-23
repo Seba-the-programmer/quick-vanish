@@ -1,3 +1,3 @@
-#include "qvanish.h"
+#include "qvanish.hpp"
 
-void greet() { std::cout << "Hey" << std::endl; }
+void greet() { std::cout << "hey\n"; }

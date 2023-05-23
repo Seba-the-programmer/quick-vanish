@@ -1,0 +1,381 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.25314 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.6.3+07e294721 for .NET Framework
+      Build started 5/23/2023 7:42:14 PM.
+      
+      Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.41
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        D:/Projects/CPP/quick-vanish/CMakeFiles/3.26.3/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.6.3+07e294721 for .NET Framework
+      Build started 5/23/2023 7:42:16 PM.
+      
+      Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.69
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        D:/Projects/CPP/quick-vanish/CMakeFiles/3.26.3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-2eh74a"
+      binary: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-2eh74a"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-2eh74a
+        
+        Run Build Command(s):D:/VStudio/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_75537.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 5/23/2023 7:42:17 PM.
+        
+        Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-2eh74a\\cmTC_75537.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_75537.dir\\Debug\\".
+          Creating directory "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-2eh74a\\Debug\\".
+          Creating directory "cmTC_75537.dir\\Debug\\cmTC_75537.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_75537.dir\\Debug\\cmTC_75537.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_75537.dir\\Debug\\\\" /Fd"cmTC_75537.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          CMakeCCompilerABI.c
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_75537.dir\\Debug\\\\" /Fd"cmTC_75537.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-2eh74a\\Debug\\cmTC_75537.exe" /INCREMENTAL /ILK:"cmTC_75537.dir\\Debug\\cmTC_75537.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-2eh74a/Debug/cmTC_75537.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-2eh74a/Debug/cmTC_75537.lib" /MACHINE:X64  /machine:x64 cmTC_75537.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_75537.vcxproj -> D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-2eh74a\\Debug\\cmTC_75537.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_75537.dir\\Debug\\cmTC_75537.tlog\\unsuccessfulbuild".
+          Touching "cmTC_75537.dir\\Debug\\cmTC_75537.tlog\\cmTC_75537.lastbuildstate".
+        Done Building Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-2eh74a\\cmTC_75537.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.72
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-z1ltv4"
+      binary: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-z1ltv4"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-z1ltv4
+        
+        Run Build Command(s):D:/VStudio/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_249ed.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 5/23/2023 7:42:18 PM.
+        
+        Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-z1ltv4\\cmTC_249ed.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_249ed.dir\\Debug\\".
+          Creating directory "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-z1ltv4\\Debug\\".
+          Creating directory "cmTC_249ed.dir\\Debug\\cmTC_249ed.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_249ed.dir\\Debug\\cmTC_249ed.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_249ed.dir\\Debug\\\\" /Fd"cmTC_249ed.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          CMakeCXXCompilerABI.cpp
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_249ed.dir\\Debug\\\\" /Fd"cmTC_249ed.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-z1ltv4\\Debug\\cmTC_249ed.exe" /INCREMENTAL /ILK:"cmTC_249ed.dir\\Debug\\cmTC_249ed.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-z1ltv4/Debug/cmTC_249ed.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-z1ltv4/Debug/cmTC_249ed.lib" /MACHINE:X64  /machine:x64 cmTC_249ed.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_249ed.vcxproj -> D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-z1ltv4\\Debug\\cmTC_249ed.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_249ed.dir\\Debug\\cmTC_249ed.tlog\\unsuccessfulbuild".
+          Touching "cmTC_249ed.dir\\Debug\\cmTC_249ed.tlog\\cmTC_249ed.lastbuildstate".
+        Done Building Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-z1ltv4\\cmTC_249ed.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.73
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
+      - "_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-y1534f"
+      binary: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-y1534f"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-y1534f
+        
+        Run Build Command(s):D:/VStudio/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_92aab.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 5/23/2023 7:42:26 PM.
+        
+        Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\cmTC_92aab.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_92aab.dir\\Debug\\".
+          Creating directory "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\Debug\\".
+          Creating directory "cmTC_92aab.dir\\Debug\\cmTC_92aab.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_92aab.dir\\Debug\\cmTC_92aab.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_92aab.dir\\Debug\\\\" /Fd"cmTC_92aab.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\src.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          src.c
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_92aab.dir\\Debug\\\\" /Fd"cmTC_92aab.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\src.c"
+        D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\src.c(1,10): fatal  error C1083: Nie można otworzyć pliku dołącz: 'pthread.h': No such file or directory [D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\cmTC_92aab.vcxproj]
+        Done Building Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\cmTC_92aab.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\cmTC_92aab.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\src.c(1,10): fatal  error C1083: Nie można otworzyć pliku dołącz: 'pthread.h': No such file or directory [D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-y1534f\\cmTC_92aab.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.39
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
+      - "_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-822ygu"
+      binary: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-822ygu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-822ygu
+        
+        Run Build Command(s):D:/VStudio/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_cec3a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 5/23/2023 7:42:27 PM.
+        
+        Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\cmTC_cec3a.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_cec3a.dir\\Debug\\".
+          Creating directory "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\Debug\\".
+          Creating directory "cmTC_cec3a.dir\\Debug\\cmTC_cec3a.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_cec3a.dir\\Debug\\cmTC_cec3a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cec3a.dir\\Debug\\\\" /Fd"cmTC_cec3a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          CheckFunctionExists.c
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cec3a.dir\\Debug\\\\" /Fd"cmTC_cec3a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\CheckFunctionExists.c"
+        Link:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\Debug\\cmTC_cec3a.exe" /INCREMENTAL /ILK:"cmTC_cec3a.dir\\Debug\\cmTC_cec3a.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-822ygu/Debug/cmTC_cec3a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-822ygu/Debug/cmTC_cec3a.lib" /MACHINE:X64  /machine:x64 cmTC_cec3a.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: nie można otworzyć pliku "pthreads.lib" [D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\cmTC_cec3a.vcxproj]
+        Done Building Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\cmTC_cec3a.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\cmTC_cec3a.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: nie można otworzyć pliku "pthreads.lib" [D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-822ygu\\cmTC_cec3a.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.51
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
+      - "_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-ypvkzj"
+      binary: "D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-ypvkzj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-ypvkzj
+        
+        Run Build Command(s):D:/VStudio/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_9965b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 5/23/2023 7:42:27 PM.
+        
+        Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\cmTC_9965b.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_9965b.dir\\Debug\\".
+          Creating directory "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\Debug\\".
+          Creating directory "cmTC_9965b.dir\\Debug\\cmTC_9965b.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_9965b.dir\\Debug\\cmTC_9965b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9965b.dir\\Debug\\\\" /Fd"cmTC_9965b.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          CheckFunctionExists.c
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9965b.dir\\Debug\\\\" /Fd"cmTC_9965b.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\CheckFunctionExists.c"
+        Link:
+          D:\\VStudio\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\Debug\\cmTC_9965b.exe" /INCREMENTAL /ILK:"cmTC_9965b.dir\\Debug\\cmTC_9965b.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-ypvkzj/Debug/cmTC_9965b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Projects/CPP/quick-vanish/CMakeFiles/CMakeScratch/TryCompile-ypvkzj/Debug/cmTC_9965b.lib" /MACHINE:X64  /machine:x64 cmTC_9965b.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: nie można otworzyć pliku "pthread.lib" [D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\cmTC_9965b.vcxproj]
+        Done Building Project "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\cmTC_9965b.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\cmTC_9965b.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: nie można otworzyć pliku "pthread.lib" [D:\\Projects\\CPP\\quick-vanish\\CMakeFiles\\CMakeScratch\\TryCompile-ypvkzj\\cmTC_9965b.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.52
+        
+      exitCode: 1
+...
