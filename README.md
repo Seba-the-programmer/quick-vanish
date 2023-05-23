@@ -10,7 +10,7 @@ Quick vanish(qvanish) is a tool, that cleans temporary windows files and CS:GO c
 *NOTE:  To add new files to project modify the CmakeLists.txt file*
 
 ## Policy template
-Add this template to every file in the project:
+Add this template to every header file in the project:
 `/* Copyright(C) 2023 by Trynity Software`
 `All rights reserved. No part of this software may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher. This file is part of Quick vanish project. You can find full policy at the end of the fle.`
 `*/`
