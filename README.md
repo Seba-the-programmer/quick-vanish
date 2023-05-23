@@ -4,8 +4,7 @@ Quick vanish(qvanish) is a tool, that cleans temporary windows files and CS:GO c
 
  1. Download the source code:
   `git pull git@github.com:Seba-the-programmer/quick-vanish.git`
-2. Go to project directory and run [cmake tool](https://cmake.org/):
-   ` cmake .`
+ 2. Go to project directory and open qvanish.sln.
  3.  Now you can edit source code.
 
 *NOTE:  To add new files to project modify the CmakeLists.txt file*
