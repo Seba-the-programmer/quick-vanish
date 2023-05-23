@@ -26,8 +26,8 @@ qvanish-ut.dir/
 qvanish-ut.vcxproj
 qvanish-ut.vcxproj.filters
 qvanish-ut.vcxproj.user
-qvanish-ut[1]_include.cmake
-qvanish-ut[1]_tests.cmake
+**.cmake
+**.cmake
 qvanish.dir/
 qvanish.sln
 qvanish.vcxproj
