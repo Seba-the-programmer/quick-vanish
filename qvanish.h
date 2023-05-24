@@ -6,12 +6,31 @@ the publisher. This file is part of Quick vanish project. You can find full
 policy at the end of the fle.
 */
 #pragma once
-#include "qvanish.h"
+#ifndef __QVANISH_H__
+#define __QVANISH_H__
+#ifdef _DEBUG
+#define LOG(x) std::cout << x << std::endl;
+#else
+#define LOG(x) 0
+#endif
+#define REFRESH_RATE_MS 200
 
-int main(int argc, char *argv[]) {
-  qvanish::console_log("Works", qvanish::INFO, 0);
-  return 0;
-}
+#include <Windows.h>
+
+#include <iostream>
+
+#include "data_loader.h"
+namespace qvanish {
+void display_splash(float duration_in_secs);
+
+void console_log(const char* argument, int type_of_log, float duration);
+void console_log(char* argument, int type_of_log, float duration);
+void console_log(std::string& argument, int type_of_log, float duration);
+enum console_notif_t { INFO = 0xF, SUCCESS = 0xA, FAULT = 0x4 };
+}  // namespace qvanish
+
+#endif
+
 /*You may not share, distribute, or reproduce in any way any copyrighted
  * material, trademarks, or other proprietary information belonging to others
  * without obtaining the prior written consent of the owner of such proprietary

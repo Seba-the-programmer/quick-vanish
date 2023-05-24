@@ -4,6 +4,9 @@
     <ClCompile Include="D:\Projects\CPP\quick-vanish\qvanish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data_loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Projects\CPP\quick-vanish\CMakeLists.txt" />
@@ -17,7 +20,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="qvanish.hpp">
+    <ClInclude Include="qvanish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data_loader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,20 +5,12 @@ other electronic or mechanical methods, without the prior written permission of
 the publisher. This file is part of Quick vanish project. You can find full
 policy at the end of the fle.
 */
-#include <Windows.h>
-
-#include <iostream>
-namespace qvanish {
-class Cleaner {
- public:
-  Cleaner();
-  ~Cleaner();
-
- public:
-  bool run_splash_screen(float time);
+#pragma once
+#include <map>
+class DataLoader {
+ private:
+  static std::map<const char*, const char*> paths;
 };
-}  // namespace qvanish
-
 /*You may not share, distribute, or reproduce in any way any copyrighted
  * material, trademarks, or other proprietary information belonging to others
  * without obtaining the prior written consent of the owner of such proprietary

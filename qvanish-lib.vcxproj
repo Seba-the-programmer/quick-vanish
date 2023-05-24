@@ -262,6 +262,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D:\Projects\CPP\quick-vanish\qvanish.cpp" />
+    <ClCompile Include="data_loader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Projects\CPP\quick-vanish\ZERO_CHECK.vcxproj">
@@ -272,7 +273,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="qvanish.hpp" />
+    <ClInclude Include="data_loader.h" />
+    <ClInclude Include="qvanish.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
