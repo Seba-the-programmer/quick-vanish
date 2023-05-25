@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 
   DataLoader::get().load_data();
   display_splash("Quick Vanish", 5);
-  console_log("Program properly initialized!", SUCCESS, 2);
+  console_log("Program properly initialized!", FAULT, 2);
   LOG("Only in debug");
   return 0;
 }
