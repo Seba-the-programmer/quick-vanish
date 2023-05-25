@@ -14,19 +14,44 @@ policy at the end of the fle.
 #define LOG(x) 0
 #endif
 #define REFRESH_RATE_MS 200
-
+#define VERSION "v0.3.1"
 #include <Windows.h>
 
 #include <iostream>
 
 #include "data_loader.h"
-namespace qvanish {
-void display_splash(float duration_in_secs);
 
-void console_log(const char* argument, int type_of_log, float duration);
-void console_log(char* argument, int type_of_log, float duration);
-void console_log(std::string& argument, int type_of_log, float duration);
-enum console_notif_t { INFO = 0xF, SUCCESS = 0xA, FAULT = 0x4 };
+namespace qvanish {
+
+const enum console_codes { INFO = 0xF, SUCCESS = 0xA, FAULT = 0x4 };
+void display_splash(std::string&& app_name, float time);
+
+template <typename T>
+inline void console_log(T&& arg, int type_of_log, float duration = 0) {
+  char symbol;
+  HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+
+  switch (type_of_log) {
+    case qvanish::FAULT:
+      symbol = '-';
+      break;
+    case qvanish::SUCCESS:
+      symbol = '+';
+      break;
+    case qvanish::INFO:
+    default:
+      symbol = '*';
+      type_of_log = qvanish::INFO;
+      break;
+  }
+  SetConsoleTextAttribute(hStdOut, type_of_log);
+  std::cout << "[" << symbol << "] " << arg;
+  std::cout << std::endl;
+
+  SetConsoleTextAttribute(hStdOut, 0xf);
+
+  if (duration > 0) Sleep(static_cast<DWORD>(duration) * 1000);
+}
 }  // namespace qvanish
 
 #endif

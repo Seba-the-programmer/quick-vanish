@@ -8,8 +8,15 @@ policy at the end of the fle.
 #pragma once
 #include "qvanish.h"
 
+using namespace qvanish;
+
 int main(int argc, char *argv[]) {
-  qvanish::console_log("Works", qvanish::INFO, 0);
+  SetConsoleTitle("Qvanish");
+
+  DataLoader::get().load_data();
+  display_splash("Quick Vanish", 5);
+  console_log("Program properly initialized!", SUCCESS, 2);
+  LOG("Only in debug");
   return 0;
 }
 /*You may not share, distribute, or reproduce in any way any copyrighted

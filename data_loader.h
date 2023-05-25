@@ -7,10 +7,23 @@ policy at the end of the fle.
 */
 #pragma once
 #include <map>
+namespace qvanish {
 class DataLoader {
  private:
-  static std::map<const char*, const char*> paths;
+  std::map<const char*, const char*> data_;
+  bool loaded_;
+  DataLoader();
+
+ public:
+  inline static DataLoader& get() {
+    static DataLoader me;
+    return me;
+  }
+
+  void load_data() noexcept;
+  inline const char* get_data(const char* name) noexcept { return data_[name]; }
 };
+}  // namespace qvanish
 /*You may not share, distribute, or reproduce in any way any copyrighted
  * material, trademarks, or other proprietary information belonging to others
  * without obtaining the prior written consent of the owner of such proprietary
