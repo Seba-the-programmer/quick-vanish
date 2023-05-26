@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Projects\CPP\quick-vanish\qvanish.cpp">
+    <ClCompile Include="D:\Projects\CPP\quick-vanish\src\qvanish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="data_loader.cpp">
+    <ClCompile Include="D:\Projects\CPP\quick-vanish\src\data_loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -16,14 +16,14 @@
       <UniqueIdentifier>{1E651CF9-44A1-3AF5-90E1-F8363291B072}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{91542e7e-e1c8-4e2d-a259-beabef0b2040}</UniqueIdentifier>
+      <UniqueIdentifier>{65b1f46f-82e7-40fd-96bb-1259d2a8ec4f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="qvanish.h">
+    <ClInclude Include="src\data_loader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="data_loader.h">
+    <ClInclude Include="src\qvanish.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

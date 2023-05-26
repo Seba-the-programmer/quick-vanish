@@ -1,7 +1,5 @@
 #include "data_loader.h"
 
-#include "qvanish.h"
-
 void qvanish::DataLoader::load_data() {
   if (loaded_) return;
 

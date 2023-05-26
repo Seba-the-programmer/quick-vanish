@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 project(qvanish)
 
 # Here add additional source files in the SRC variable
-set(SRC qvanish.cpp)
+set(SRC src/qvanish.cpp src/data_loader.cpp)
 set(CMAKE_CXX_STANDARD 17)
 set(CXX_STANDARD_REQUIRED on)
 
@@ -17,12 +17,12 @@ FetchContent_MakeAvailable(googletest)
 
 
 add_library(${PROJECT_NAME}-lib STATIC ${SRC})
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 
 # Testing
 enable_testing()
-add_executable(${PROJECT_NAME}-ut qvanish-tests.ut.cpp)
+add_executable(${PROJECT_NAME}-ut src/qvanish-tests.ut.cpp)
 target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib)
 target_link_libraries(${PROJECT_NAME}-ut GTest::gtest_main)
 

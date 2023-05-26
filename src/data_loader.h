@@ -6,6 +6,9 @@ the publisher. This file is part of Quick vanish project. You can find full
 policy at the end of the fle.
 */
 #pragma once
+#include <Windows.h>
+
+#include <iostream>
 #include <map>
 #include <string>
 
@@ -30,7 +33,7 @@ class DataLoader {
 /*You may not share, distribute, or reproduce in any way any copyrighted
  * material, trademarks, or other proprietary information belonging to others
  * without obtaining the prior written consent of the owner of such proprietary
- * rights. It is Trend Micro’s policy to terminate this Agreement if you
+ * rights. It is Trend Microï¿½s policy to terminate this Agreement if you
  * repeatedly infringe the copyright rights of others upon receipt of prompt
  * notification to Trend Micro by the copyright owner or the copyright owner's
  * legal agent. Without limiting the foregoing, if you believe that your work

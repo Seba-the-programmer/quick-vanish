@@ -521,8 +521,6 @@ _Python_EXECUTABLE:INTERNAL=C:/Program Files/WindowsApps/PythonSoftwareFoundatio
 //Python Properties
 _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;2;64;;cp311-win_amd64;;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\Lib;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\Lib;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\Lib\site-packages;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\Lib\site-packages
 _Python_INTERPRETER_SIGNATURE:INTERNAL=7ad4f33c536ce3eddf221a55618935bf
-//Interpreter reason failure
-_Python_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
 cmake_package_name:INTERNAL=GTest
