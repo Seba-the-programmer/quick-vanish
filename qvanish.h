@@ -14,7 +14,7 @@ policy at the end of the fle.
 #define LOG(x) 0
 #endif
 #define REFRESH_RATE_MS 200
-#define VERSION "v0.5.1 Dynamite"
+#define VERSION "v0.5.2 Dynamite"
 #include <Windows.h>
 
 #include <iostream>

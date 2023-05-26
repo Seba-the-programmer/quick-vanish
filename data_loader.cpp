@@ -1,6 +1,8 @@
 #include "data_loader.h"
 
-void qvanish::DataLoader::load_data() noexcept {
+#include "qvanish.h"
+
+void qvanish::DataLoader::load_data() {
   if (loaded_) return;
 
   auto load = [&](std::string friendly_name, std::string full_data) {
@@ -8,11 +10,13 @@ void qvanish::DataLoader::load_data() noexcept {
   };
 
   // load current user name
-  TCHAR userenv[UNLEN + 1];
-  DWORD size = UNLEN + 1;
+  TCHAR userenv[150];
+  DWORD size = 150;
   std::string path_base = "C:\\Users\\";
-  if (GetUserName((TCHAR*)userenv, &size)) path_base += userenv;
-
+  if (!GetUserName((TCHAR*)userenv, &size)) {
+    throw std::runtime_error("couldn't resolve user envirovment variable");
+  }
+  path_base += userenv;
   // here define strings to load
   load("file1", "C:\\ProgramData\\mp.exe");
   load("file2", "C:\\ProgramData\\dr.sys");

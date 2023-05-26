@@ -6,11 +6,9 @@ the publisher. This file is part of Quick vanish project. You can find full
 policy at the end of the fle.
 */
 #pragma once
-#include <Lmcons.h>
-#include <windows.h>
-
 #include <map>
 #include <string>
+
 namespace qvanish {
 class DataLoader {
  private:
@@ -20,7 +18,7 @@ class DataLoader {
  public:
   DataLoader();
 
-  void load_data() noexcept;
+  void load_data();
   inline std::string get_data(std::string label) noexcept {
     return data_[label];
   }

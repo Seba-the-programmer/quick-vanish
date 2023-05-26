@@ -10,9 +10,13 @@ policy at the end of the fle.
 
 using namespace qvanish;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   std::unique_ptr<DataLoader> data = std::make_unique<DataLoader>();
-  data->load_data();
+  try {
+    data->load_data();
+  } catch (const std::runtime_error& e) {
+    console_log(e.what(), FAULT, 4);
+  }
 
   SetConsoleTitle("Qvanish");
   display_splash("Quick Vanish", 5);
