@@ -13,6 +13,8 @@ void qvanish::display_splash(std::string&& app_name, float time = 1) {
   }
 }
 
+void qvanish::clean(std::unique_ptr<DataLoader>& data) {}
+
 void render_splash(const std::string& app_name) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);

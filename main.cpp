@@ -16,7 +16,8 @@ int main(int argc, char *argv[]) {
 
   SetConsoleTitle("Qvanish");
   display_splash("Quick Vanish", 5);
-  console_log("Program properly initialized!", FAULT, 2);
+
+  clean(data);
 
   data.reset(nullptr);
 

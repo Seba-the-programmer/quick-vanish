@@ -3,17 +3,28 @@
 void qvanish::DataLoader::load_data() noexcept {
   if (loaded_) return;
 
-  auto load = [&](const char* friendly_name, const char* full_data) {
-    data_[friendly_name] = full_data;
+  auto load = [&](std::string friendly_name, std::string full_data) {
+    data_.insert(make_pair(friendly_name, full_data));
   };
 
+  // getenv_s(&size, user.data(), 20, "username");
+  std::string path_base = "C\\Users\\" + user;
+
   // here define strings to load
-  load("path_cheat1", "C:\\dsadasd");
-  load("path_cheat2", "C:\\dsadasd");
-  load("path_cheat3", "C:\\dsadasd");
+  load("file1", "C:\\ProgramData\\mp.exe");
+  load("file2", "C:\\ProgramData\\dr.sys");
+  load("file3", "C:\\ProgramData\\loader.data");
+  load("path_base", path_base);
+  load("path_citizen", "\\AppData\\Roaming\\CitizenFX\\");
+  load("path_prefetch", "C:\\Windows\\Prefetch");
+  load("path_temp", "\\AppData\\Local\\Temp\\");
+  load("path_recent", "\\Recent\\");
+  load("path_history", "\\AppData\\Local\\Microsoft\\Windows\\History\\");
+  load("ext", ".cth");
 
   loaded_ = true;
 }
+
 qvanish::DataLoader::DataLoader()
     : loaded_(false),
       data_({})

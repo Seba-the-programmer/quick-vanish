@@ -9,7 +9,7 @@ policy at the end of the fle.
 #ifndef __QVANISH_H__
 #define __QVANISH_H__
 #ifdef _DEBUG
-#define LOG(x) std::cout << x << std::endl;
+#define LOG(x) std::cout << x << std::endl
 #else
 #define LOG(x) 0
 #endif
@@ -52,6 +52,8 @@ inline void console_log(T&& arg, int type_of_log, float duration = 0) {
 
   if (duration > 0) Sleep(static_cast<DWORD>(duration) * 1000);
 }
+
+void clean(std::unique_ptr<DataLoader>& data);
 }  // namespace qvanish
 
 #endif

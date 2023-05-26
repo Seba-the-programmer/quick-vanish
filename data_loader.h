@@ -6,18 +6,20 @@ the publisher. This file is part of Quick vanish project. You can find full
 policy at the end of the fle.
 */
 #pragma once
+#include <iostream>
 #include <map>
+#include <string>
 namespace qvanish {
 class DataLoader {
  private:
-  std::map<const char*, const char*> data_;
+  std::map<std::string, std::string> data_;
   bool loaded_;
 
  public:
   DataLoader();
 
   void load_data() noexcept;
-  inline const char* get_data(const char* name) noexcept { return data_[name]; }
+  inline std::string get_data(std::string name) { return data_[name]; }
 };
 }  // namespace qvanish
 /*You may not share, distribute, or reproduce in any way any copyrighted
