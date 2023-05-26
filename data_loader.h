@@ -6,7 +6,9 @@ the publisher. This file is part of Quick vanish project. You can find full
 policy at the end of the fle.
 */
 #pragma once
-#include <iostream>
+#include <Lmcons.h>
+#include <windows.h>
+
 #include <map>
 #include <string>
 namespace qvanish {
@@ -19,7 +21,12 @@ class DataLoader {
   DataLoader();
 
   void load_data() noexcept;
-  inline std::string get_data(std::string name) { return data_[name]; }
+  inline std::string get_data(std::string label) noexcept {
+    return data_[label];
+  }
+  inline void push_data(std::string label, std::string data) {
+    data_.insert(make_pair(label, data));
+  }
 };
 }  // namespace qvanish
 /*You may not share, distribute, or reproduce in any way any copyrighted

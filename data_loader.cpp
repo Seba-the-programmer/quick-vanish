@@ -7,19 +7,22 @@ void qvanish::DataLoader::load_data() noexcept {
     data_.insert(make_pair(friendly_name, full_data));
   };
 
-  // getenv_s(&size, user.data(), 20, "username");
-  std::string path_base = "C\\Users\\" + user;
+  // load current user name
+  TCHAR userenv[UNLEN + 1];
+  DWORD size = UNLEN + 1;
+  std::string path_base = "C:\\Users\\";
+  if (GetUserName((TCHAR*)userenv, &size)) path_base += userenv;
 
   // here define strings to load
   load("file1", "C:\\ProgramData\\mp.exe");
   load("file2", "C:\\ProgramData\\dr.sys");
   load("file3", "C:\\ProgramData\\loader.data");
-  load("path_base", path_base);
-  load("path_citizen", "\\AppData\\Roaming\\CitizenFX\\");
+  load("path_citizen", path_base + "\\AppData\\Roaming\\CitizenFX\\");
   load("path_prefetch", "C:\\Windows\\Prefetch");
-  load("path_temp", "\\AppData\\Local\\Temp\\");
-  load("path_recent", "\\Recent\\");
-  load("path_history", "\\AppData\\Local\\Microsoft\\Windows\\History\\");
+  load("path_temp", path_base + "\\AppData\\Local\\Temp\\");
+  load("path_recent", path_base + "\\Recent\\");
+  load("path_history",
+       path_base + "\\AppData\\Local\\Microsoft\\Windows\\History\\");
   load("ext", ".cth");
 
   loaded_ = true;
