@@ -12,14 +12,20 @@ using namespace qvanish;
 
 int main(int argc, char* argv[]) {
   std::unique_ptr<DataLoader> data = std::make_unique<DataLoader>();
+  SetConsoleTitle("Qvanish");
+
   try {
     data->load_data();
   } catch (const std::runtime_error& e) {
     console_log(e.what(), FAULT, 4);
   }
 
-  SetConsoleTitle("Qvanish");
-  display_splash("Quick Vanish", 5);
+  display_splash("Quick Vanish", 1);
+
+  if (!is_elevated()) {
+    console_log("Run this program as administrator", FAULT, 1);
+    return 0;
+  }
 
   clean(data);
 

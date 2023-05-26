@@ -19,12 +19,12 @@ void qvanish::DataLoader::load_data() {
   load("file1", "C:\\ProgramData\\mp.exe");
   load("file2", "C:\\ProgramData\\dr.sys");
   load("file3", "C:\\ProgramData\\loader.data");
-  load("path_citizen", path_base + "\\AppData\\Roaming\\CitizenFX\\");
+  load("path_citizen", path_base + "\\AppData\\Roaming\\CitizenFX");
   load("path_prefetch", "C:\\Windows\\Prefetch");
-  load("path_temp", path_base + "\\AppData\\Local\\Temp\\");
-  load("path_recent", path_base + "\\Recent\\");
+  load("path_temp", path_base + "\\AppData\\Local\\Temp");
+  load("path_recent", path_base + "\\Recent");
   load("path_history",
-       path_base + "\\AppData\\Local\\Microsoft\\Windows\\History\\");
+       path_base + "\\AppData\\Local\\Microsoft\\Windows\\History");
   load("ext", ".cth");
 
   loaded_ = true;

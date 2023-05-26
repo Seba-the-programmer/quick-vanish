@@ -1,5 +1,9 @@
 #include "qvanish.h"
 
+#include <filesystem>
+
+namespace fs = std::filesystem;
+
 void render_splash(const std::string&) noexcept;
 
 void qvanish::display_splash(std::string&& app_name, float time = 1) {
@@ -13,7 +17,66 @@ void qvanish::display_splash(std::string&& app_name, float time = 1) {
   }
 }
 
-void qvanish::clean(std::unique_ptr<DataLoader>& data) {}
+void qvanish::clean(std::unique_ptr<DataLoader>& data) {
+  qvanish::console_log("Cleaner initialized", INFO, 0.5);
+  qvanish::console_log("Proceeding to delete files...", INFO, 1);
+
+  auto del_file = [](const char* file) {
+    if (fs::remove(file)) {
+      qvanish::console_log("File successfully deleted", SUCCESS, 1);
+      return;
+    }
+    qvanish::console_log("One of the files could not be deleted", FAULT, 1);
+  };
+
+  del_file(data->get_data("file1").data());
+  del_file(data->get_data("file2").data());
+  del_file(data->get_data("file3").data());
+
+  qvanish::console_log("No more single files to delete", INFO, 0.5);
+  qvanish::console_log("Proceeding to clean up directories...", INFO, 1);
+
+  auto del_dir = [](const fs::path& dir) {
+    LOG(dir);
+    if (!fs::exists(dir) || fs::is_empty(dir)) {
+      qvanish::console_log("Couldn't open directory", FAULT, 1);
+      return;
+    }
+    for (auto& path : fs::directory_iterator(dir)) {
+      if (fs::remove_all(path)) {
+        qvanish::console_log("Files in directory successfully deleted", SUCCESS,
+                             1);
+        return;
+      }
+      qvanish::console_log("Couldn't delete any files in directory", FAULT, 1);
+    }
+  };
+
+  del_dir(data->get_data("path_citizen"));
+  del_dir(data->get_data("path_prefetch"));
+
+  // bizzare problem with these paths. undefined behavior
+  //  del_dir(data->get_data("path_temp"));
+  //  del_dir(data->get_data("path_recent"));
+  del_dir(data->get_data("path_history"));
+}
+
+BOOL qvanish::is_elevated() {
+  BOOL fRet = FALSE;
+  HANDLE hToken = NULL;
+  if (OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &hToken)) {
+    TOKEN_ELEVATION Elevation;
+    DWORD cbSize = sizeof(TOKEN_ELEVATION);
+    if (GetTokenInformation(hToken, TokenElevation, &Elevation,
+                            sizeof(Elevation), &cbSize)) {
+      fRet = Elevation.TokenIsElevated;
+    }
+  }
+  if (hToken) {
+    CloseHandle(hToken);
+  }
+  return fRet;
+}
 
 void render_splash(const std::string& app_name) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
