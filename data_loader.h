@@ -12,13 +12,9 @@ class DataLoader {
  private:
   std::map<const char*, const char*> data_;
   bool loaded_;
-  DataLoader();
 
  public:
-  inline static DataLoader& get() {
-    static DataLoader me;
-    return me;
-  }
+  DataLoader();
 
   void load_data() noexcept;
   inline const char* get_data(const char* name) noexcept { return data_[name]; }

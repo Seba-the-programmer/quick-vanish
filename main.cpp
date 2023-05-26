@@ -11,12 +11,15 @@ policy at the end of the fle.
 using namespace qvanish;
 
 int main(int argc, char *argv[]) {
-  SetConsoleTitle("Qvanish");
+  std::unique_ptr<DataLoader> data = std::make_unique<DataLoader>();
+  data->load_data();
 
-  DataLoader::get().load_data();
+  SetConsoleTitle("Qvanish");
   display_splash("Quick Vanish", 5);
   console_log("Program properly initialized!", FAULT, 2);
-  LOG("Only in debug");
+
+  data.reset(nullptr);
+
   return 0;
 }
 /*You may not share, distribute, or reproduce in any way any copyrighted
