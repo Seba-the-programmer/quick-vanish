@@ -8,9 +8,27 @@ policy at the end of the fle.
 #pragma once
 #include <conio.h>
 
-#include "qvanish.h"
+#include <filesystem>
+#include <fstream>
 
+#include "auth/auth.hpp"
+#include "qvanish.h"
+#include "skCrypter.h"
+namespace fs = std::filesystem;
 using namespace qvanish;
+using namespace KeyAuth;
+
+std::string name = skCrypt("qvanish").decrypt();
+std::string ownerid = skCrypt("pn27sAJsvK").decrypt();
+std::string secret =
+    skCrypt("210028dc327aac97b100109e9a680dfa4033430cc6d59ab43e72925ae99b8ebc")
+        .decrypt();
+std::string version = skCrypt("1.0").decrypt();
+std::string url = skCrypt("https://keyauth.win/api/1.2/").decrypt();
+
+// api KeyAuthApp(name, ownerid, secret, version, url);
+
+bool validate_license();
 
 int main(int argc, char* argv[]) {
   std::unique_ptr<DataLoader> data = std::make_unique<DataLoader>();
@@ -18,17 +36,24 @@ int main(int argc, char* argv[]) {
   display_splash("Quick Vanish", 1);
 
   if (!is_elevated()) {
-    console_log("Run this program as administrator", FAULT, 1);
+    console_log("Run this program as administrator", FAULT, 0);
+    _getch();
     return 0;
   }
-  // TODO: add keyauth
+
+  if (!validate_license()) {
+    console_log("Unable to validate your license", FAULT, 0);
+    _getch();
+    return 0;
+  }
 
   try {
     data->load_data();
   } catch (const std::runtime_error& e) {
     console_log(e.what(), FAULT, 4);
   }
-  console_log("Close all other programs to avoid unexpected errors", INFO, 0);
+  console_log("Close all other programs to avoid unexpected behaviors", INFO,
+              0.3f);
   console_log("Click any key to procced...", INFO, 0);
   _getch();
 
@@ -40,6 +65,52 @@ int main(int argc, char* argv[]) {
   data.reset(nullptr);
 
   return 0;
+}
+
+bool validate_license() {
+  // KeyAuthApp.init();
+  // if (!KeyAuthApp.data.success) {
+  // console_log(KeyAuthApp.data.message, FAULT, 0);
+  //}
+
+  // if (KeyAuthApp.checkblack()) abort();
+
+  std::string key;
+  constexpr char* file_name = "LICENSE";
+  if (!fs::exists(file_name)) {
+    std::ofstream new_license(file_name);
+
+    std::cout << "Enter your license key:";
+    std::cin >> key;
+
+    new_license << key;
+    new_license.close();
+
+  } else {
+    std::fstream license_file(file_name);
+    if (!license_file.good()) {
+      std::cout << "Enter your license key:";
+      std::cin >> key;
+      license_file.close();
+      fs::remove(file_name);
+      license_file.open(file_name, std::fstream::in);
+      license_file << key;
+    }
+    license_file >> key;
+
+    license_file.close();
+    int attr = GetFileAttributes(file_name);
+    if ((attr & FILE_ATTRIBUTE_HIDDEN) == 0) {
+      SetFileAttributes(file_name, attr | FILE_ATTRIBUTE_HIDDEN);
+    }
+  }
+  // KeyAuthApp.license(key);
+  // if (!KeyAuthApp.data.success) {
+  // console_log(KeyAuthApp.data.message, FAULT, 0);
+  // return false;
+  //}
+
+  return true;
 }
 /*You may not share, distribute, or reproduce in any way any copyrighted
  * material, trademarks, or other proprietary information belonging to others

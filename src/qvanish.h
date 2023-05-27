@@ -14,7 +14,7 @@ policy at the end of the fle.
 #define LOG(x) 0
 #endif
 #define REFRESH_RATE_MS 200
-#define VERSION "v0.8.1 Flame Thrower"
+#define VERSION "v0.8.3.1 Flame Thrower"
 #include <Windows.h>
 
 #include <iostream>

@@ -15,16 +15,5 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{1E651CF9-44A1-3AF5-90E1-F8363291B072}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{1a53c7e5-7ee6-448b-bb8c-af0e21224606}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\data_loader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\qvanish.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
