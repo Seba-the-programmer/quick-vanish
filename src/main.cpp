@@ -6,6 +6,8 @@ the publisher. This file is part of Quick vanish project. You can find full
 policy at the end of the fle.
 */
 #pragma once
+#include <conio.h>
+
 #include "qvanish.h"
 
 using namespace qvanish;
@@ -13,6 +15,13 @@ using namespace qvanish;
 int main(int argc, char* argv[]) {
   std::unique_ptr<DataLoader> data = std::make_unique<DataLoader>();
   SetConsoleTitle("Qvanish");
+  display_splash("Quick Vanish", 1);
+
+  if (!is_elevated()) {
+    console_log("Run this program as administrator", FAULT, 1);
+    return 0;
+  }
+  // TODO: add keyauth
 
   try {
     data->load_data();
@@ -20,14 +29,10 @@ int main(int argc, char* argv[]) {
     console_log(e.what(), FAULT, 4);
   }
 
-  display_splash("Quick Vanish", 1);
-
-  if (!is_elevated()) {
-    console_log("Run this program as administrator", FAULT, 1);
-    return 0;
-  }
-
   clean(data);
+  console_log("No more files to delete", INFO, 0.5);
+  console_log("Press any key to close the program", INFO, 0);
+  _getch();
 
   data.reset(nullptr);
 

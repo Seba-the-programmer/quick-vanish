@@ -37,19 +37,22 @@ void qvanish::clean(std::unique_ptr<DataLoader>& data) {
   qvanish::console_log("Proceeding to clean up directories...", INFO, 1);
 
   auto del_dir = [](const fs::path& dir) {
-    LOG(dir);
-    if (!fs::exists(dir) || fs::is_empty(dir)) {
+    qvanish::console_log("Entering to:", INFO, 0.0);
+    qvanish::console_log(dir, INFO, static_cast<float>(0.3));
+    if (!fs::exists(dir)) {
       qvanish::console_log("Couldn't open directory", FAULT, 1);
       return;
     }
-    for (auto& path : fs::directory_iterator(dir)) {
-      if (fs::remove_all(path)) {
-        qvanish::console_log("Files in directory successfully deleted", SUCCESS,
-                             1);
-        return;
-      }
-      qvanish::console_log("Couldn't delete any files in directory", FAULT, 1);
+    if (fs::is_empty(dir)) {
+      qvanish::console_log("Directory is empty", FAULT, 1);
+      return;
     }
+    if (fs::remove_all(dir)) {
+      qvanish::console_log("Files in directory successfully deleted", SUCCESS,
+                           1);
+      return;
+    }
+    qvanish::console_log("Couldn't delete any files in directory", FAULT, 1);
   };
 
   del_dir(data->get_data("path_citizen"));
@@ -61,7 +64,7 @@ void qvanish::clean(std::unique_ptr<DataLoader>& data) {
   del_dir(data->get_data("path_history"));
 }
 
-BOOL qvanish::is_elevated() {
+bool qvanish::is_elevated() {
   BOOL fRet = FALSE;
   HANDLE hToken = NULL;
   if (OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &hToken)) {

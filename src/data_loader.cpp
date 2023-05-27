@@ -3,7 +3,8 @@
 void qvanish::DataLoader::load_data() {
   if (loaded_) return;
 
-  auto load = [&](std::string friendly_name, std::string full_data) {
+  auto load = [&](const std::string& friendly_name,
+                  const std::string& full_data) {
     data_.insert(make_pair(friendly_name, full_data));
   };
 

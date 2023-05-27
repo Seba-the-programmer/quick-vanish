@@ -14,7 +14,7 @@ policy at the end of the fle.
 #define LOG(x) 0
 #endif
 #define REFRESH_RATE_MS 200
-#define VERSION "v0.7.3 Wrecker"
+#define VERSION "v0.7.4 Wrecker"
 #include <Windows.h>
 
 #include <iostream>
@@ -55,7 +55,7 @@ inline void console_log(T&& arg, int type_of_log, float duration = 0) {
 
 void clean(std::unique_ptr<DataLoader>& data);
 
-BOOL is_elevated();
+bool is_elevated();
 }  // namespace qvanish
 
 #endif
