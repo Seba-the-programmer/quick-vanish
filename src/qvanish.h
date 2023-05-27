@@ -14,7 +14,7 @@ policy at the end of the fle.
 #define LOG(x) 0
 #endif
 #define REFRESH_RATE_MS 200
-#define VERSION "v0.7.4 Wrecker"
+#define VERSION "v0.8.1 Flame Thrower"
 #include <Windows.h>
 
 #include <iostream>
@@ -50,7 +50,7 @@ inline void console_log(T&& arg, int type_of_log, float duration = 0) {
 
   SetConsoleTextAttribute(hStdOut, 0xf);
 
-  if (duration > 0) Sleep(static_cast<DWORD>(duration * 1000));
+  Sleep(static_cast<DWORD>(duration * 1000));
 }
 
 void clean(std::unique_ptr<DataLoader>& data);

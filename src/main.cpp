@@ -28,6 +28,9 @@ int main(int argc, char* argv[]) {
   } catch (const std::runtime_error& e) {
     console_log(e.what(), FAULT, 4);
   }
+  console_log("Close all other programs to avoid unexpected errors", INFO, 0);
+  console_log("Click any key to procced...", INFO, 0);
+  _getch();
 
   clean(data);
   console_log("No more files to delete", INFO, 0.5);

@@ -5,6 +5,7 @@
 namespace fs = std::filesystem;
 
 void render_splash(const std::string&) noexcept;
+void DeleteAllFiles(const std::string&);
 
 void qvanish::display_splash(std::string&& app_name, float time = 1) {
   if (time < 0) throw std::exception("Time cannot be less than zero");
@@ -21,12 +22,13 @@ void qvanish::clean(std::unique_ptr<DataLoader>& data) {
   qvanish::console_log("Cleaner initialized", INFO, 0.5);
   qvanish::console_log("Proceeding to delete files...", INFO, 1);
 
-  auto del_file = [](const char* file) {
+  auto del_file = [](const std::string& file) {
+    qvanish::console_log("Searching for: " + file, INFO, 0.3f);
     if (fs::remove(file)) {
       qvanish::console_log("File successfully deleted", SUCCESS, 1);
       return;
     }
-    qvanish::console_log("One of the files could not be deleted", FAULT, 1);
+    qvanish::console_log(file + " could not be deleted", FAULT, 1);
   };
 
   del_file(data->get_data("file1").data());
@@ -36,31 +38,26 @@ void qvanish::clean(std::unique_ptr<DataLoader>& data) {
   qvanish::console_log("No more single files to delete", INFO, 0.5);
   qvanish::console_log("Proceeding to clean up directories...", INFO, 1);
 
-  auto del_dir = [](const fs::path& dir) {
-    qvanish::console_log("Entering to:", INFO, 0.0);
-    qvanish::console_log(dir, INFO, static_cast<float>(0.3));
+  auto del_dir = [](const std::string& dir) {
+    qvanish::console_log("Entering to: " + dir, INFO, 0.3f);
     if (!fs::exists(dir)) {
-      qvanish::console_log("Couldn't open directory", FAULT, 1);
+      qvanish::console_log("Could not open the directory", FAULT, 1);
       return;
     }
     if (fs::is_empty(dir)) {
       qvanish::console_log("Directory is empty", FAULT, 1);
       return;
     }
-    if (fs::remove_all(dir)) {
-      qvanish::console_log("Files in directory successfully deleted", SUCCESS,
-                           1);
-      return;
-    }
-    qvanish::console_log("Couldn't delete any files in directory", FAULT, 1);
+    DeleteAllFiles(dir);
+    return;
   };
 
   del_dir(data->get_data("path_citizen"));
   del_dir(data->get_data("path_prefetch"));
 
+  del_dir(data->get_data("path_temp"));
   // bizzare problem with these paths. undefined behavior
-  //  del_dir(data->get_data("path_temp"));
-  //  del_dir(data->get_data("path_recent"));
+  // del_dir(data->get_data("path_recent"));
   del_dir(data->get_data("path_history"));
 }
 
@@ -119,4 +116,62 @@ void render_splash(const std::string& app_name) noexcept {
   for (int i = 0; i < width; i++) std::cout << symbol;
   std::cout << '\n';
   std::cout << "by Trynity Software 2023     " << VERSION << "\n\n\n";
+}
+
+void DeleteAllFiles(const std::string& path) {
+  WIN32_FIND_DATA wfd;
+  HANDLE hFile;
+  DWORD dwFileAttr;
+  std::string file;
+  std::string strSpec = path + "*.*";
+  std::string path_file;
+
+  // find the first file
+  hFile = FindFirstFile(strSpec.c_str(), &wfd);
+
+  if (hFile != INVALID_HANDLE_VALUE) {
+    do {
+      file = wfd.cFileName;
+      path_file = path + file;
+      // get the file attributes
+      dwFileAttr = GetFileAttributes(path_file.c_str());
+
+      // see if file is read-only : if so unset read-only
+      if (dwFileAttr & FILE_ATTRIBUTE_READONLY) {
+        dwFileAttr &= ~FILE_ATTRIBUTE_READONLY;
+        SetFileAttributes(path_file.c_str(), dwFileAttr);
+      }
+
+      // see if the file is a directory
+      if (wfd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
+        // make sure it isn't current or parent directory
+        if (file != "." && file != "..") {
+          path_file += "\\";
+          // recursively delete all files in this folder
+          DeleteAllFiles(path_file);
+          // remove the directory
+
+          if (RemoveDirectory(path_file.c_str())) {
+            qvanish::console_log("Deleted directory: " + path_file,
+                                 qvanish::SUCCESS, 0);
+          } else {
+            qvanish::console_log("Could not delete directory: " + path_file,
+                                 qvanish::INFO, 0);
+          }
+        }
+      } else {
+        // delete the file
+        if (DeleteFile(path_file.c_str())) {
+          qvanish::console_log("Deleted file: " + path_file, qvanish::SUCCESS,
+                               0);
+        } else {
+          qvanish::console_log("Could not delete file: " + path_file,
+                               qvanish::INFO, 0);
+        }
+      }
+    } while (FindNextFile(hFile, &wfd));
+  } else {
+  }
+
+  FindClose(hFile);
 }
