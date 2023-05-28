@@ -28,7 +28,7 @@ std::string url = skCrypt("https://keyauth.win/api/1.2/").decrypt();
 
 api KeyAuthApp(name, ownerid, secret, version, url);
 
-bool validate_license();
+bool validate_license(const std::string&);
 
 int main(int argc, char* argv[]) {
   std::unique_ptr<DataLoader> data = std::make_unique<DataLoader>();
@@ -40,16 +40,15 @@ int main(int argc, char* argv[]) {
     _getch();
     return 0;
   }
-
-  while (true) {
-    if (validate_license()) break;
-  }
-
   try {
     data->load_data();
   } catch (const std::runtime_error& e) {
     console_log(e.what(), FAULT, 4);
   }
+  while (true) {
+    if (validate_license(data->get_data("path_save"))) break;
+  }
+
   console_log("Close all other programs to avoid unexpected behaviors", INFO,
               0.3f);
   console_log("Click any key to procced...", INFO, 0);
@@ -65,9 +64,7 @@ int main(int argc, char* argv[]) {
   return 0;
 }
 
-LPCSTR file_name = "KEY";
-
-void create_license() {
+void create_license(const std::string& file_name) {
   if (fs::exists(file_name)) fs::remove(file_name);
 
   std::ofstream new_license(file_name);
@@ -77,11 +74,13 @@ void create_license() {
   new_license << key;
   new_license.close();
 
-  int attr = GetFileAttributes(file_name);
-  SetFileAttributes(file_name, attr | FILE_ATTRIBUTE_HIDDEN);
+  int attr = GetFileAttributes(file_name.data());
+  if ((attr & FILE_ATTRIBUTE_HIDDEN) == 0) {
+    SetFileAttributes(file_name.data(), attr | FILE_ATTRIBUTE_HIDDEN);
+  }
 }
 
-bool validate_license() {
+bool validate_license(const std::string& file_name) {
   KeyAuthApp.init();
   if (!KeyAuthApp.data.success) {
     console_log("Unable to connect to the server", FAULT, 0.3f);
@@ -91,25 +90,25 @@ bool validate_license() {
 
   if (KeyAuthApp.checkblack()) abort();
 
-  std::string license;
   if (!fs::exists(file_name)) {
-    create_license();
+    create_license(file_name);
   } else {
-    std::fstream license_file(file_name);
-    if (!license_file.good()) {
-      license_file.close();
-      create_license();
+    std::fstream license_read(file_name);
+    if (!license_read.good()) {
+      license_read.close();
+      create_license(file_name);
     }
-
-    license_file >> license;
-    license_file.close();
   }
 
   while (true) {
+    std::fstream license_file(file_name);
+    std::string license;
+    license_file >> license;
+    license_file.close();
     KeyAuthApp.license(license);
     if (KeyAuthApp.data.success) return true;
     console_log(KeyAuthApp.data.message, FAULT, 0.5f);
-    create_license();
+    create_license(file_name);
   }
 }
 /*You may not share, distribute, or reproduce in any way any copyrighted

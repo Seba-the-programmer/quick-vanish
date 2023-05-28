@@ -26,7 +26,7 @@ void qvanish::DataLoader::load_data() {
   load("path_recent", path_base + "\\Recent\\");
   load("path_history",
        path_base + "\\AppData\\Local\\Microsoft\\Windows\\History\\");
-  load("ext", ".cth");
+  load("path_save", path_base + "\\AppData\\local\\KEYQV");
 
   loaded_ = true;
 }

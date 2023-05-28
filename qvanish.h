@@ -14,7 +14,7 @@ policy at the end of the fle.
 #define LOG(x) 0
 #endif
 #define REFRESH_RATE_MS 200
-#define VERSION "v0.9.0 Death star"
+#define VERSION "v0.9.8 Death star"
 #include <Windows.h>
 
 #include <iostream>
