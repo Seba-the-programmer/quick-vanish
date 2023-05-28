@@ -7,12 +7,12 @@ namespace fs = std::filesystem;
 void render_splash(const std::string&) noexcept;
 void DeleteAllFiles(const std::string&);
 
-void qvanish::display_splash(std::string&& app_name, float time = 1) {
-  if (time < 0) throw std::exception("Time cannot be less than zero");
+void qvanish::display_splash(std::string&& app_name, float t = 1) {
+  if (t < 0) throw std::exception("Time cannot be less than zero");
 
   render_splash(app_name);
 
-  for (int i = 0; i < (time * 1000); i += REFRESH_RATE_MS) {
+  for (int i = 0; i < (t * 1000); i += REFRESH_RATE_MS) {
     if (GetAsyncKeyState(VK_SPACE)) break;
     Sleep(REFRESH_RATE_MS);
   }

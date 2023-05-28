@@ -33,7 +33,7 @@ bool validate_license(const std::string&);
 int main(int argc, char* argv[]) {
   std::unique_ptr<DataLoader> data = std::make_unique<DataLoader>();
   SetConsoleTitle("Qvanish");
-  display_splash("Quick Vanish", 1);
+  display_splash("Quick Vanish", 0);
 
   if (!is_elevated()) {
     console_log("Run this program as administrator", FAULT, 0);
@@ -107,7 +107,7 @@ bool validate_license(const std::string& file_name) {
     license_file.close();
     KeyAuthApp.license(license);
     if (KeyAuthApp.data.success) return true;
-    console_log(KeyAuthApp.data.message, FAULT, 0.5f);
+    console_log("License key not found", FAULT, 0.5f);
     create_license(file_name);
   }
 }
