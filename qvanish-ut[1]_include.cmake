@@ -1,5 +1,0 @@
-if(EXISTS "D:/Projects/CPP/quick-vanish/qvanish-ut[1]_tests.cmake")
-  include("D:/Projects/CPP/quick-vanish/qvanish-ut[1]_tests.cmake")
-else()
-  add_test(qvanish-ut_NOT_BUILT qvanish-ut_NOT_BUILT)
-endif()
